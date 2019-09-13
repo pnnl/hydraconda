@@ -1,3 +1,17 @@
-*.pyc
-./output/*
-secrets.yaml
+# First, ignore everything
+*
+# Now, whitelist anything that's a directory
+!*/
+# And all the file types you're interested in.
+!*.dvc
+!*.py
+!*.r
+!*.sh
+!*.cmd
+# assuming (small) config type yamls
+!*.yaml
+!*.yml
+!*.smalljson
+# don't store your secrets
+secrets.*
+secret.*

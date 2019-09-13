@@ -3,11 +3,15 @@
 # Now, whitelist anything that's a directory
 !*/
 # And all the file types you're interested in.
+# data ver ctrol
 !*.dvc
+# programs
 !*.py
 !*.r
 !*.sh
 !*.cmd
+# doc src
+!*.md
 # assuming (small) config type yamls
 !*.yaml
 !*.yml

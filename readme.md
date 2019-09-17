@@ -21,7 +21,7 @@ This repository represents a 'workspace' for both code (both 'library' type code
 
     2. Set the DVC remote (in [.dvc/config](.dvc/config)). A Windows example is hardcoded so change accordingly with `dvc remote modify url <location>`.
     <br>
-    On Windows, map \\\pnl\projects to a drive. So the DVC repo would be E:\ArmyReserve\ESTCP\Machine Learning\software-files\dont-touch\not-code-dvc-repo
+    On Windows, map \\\pnl\projects to a drive. So the DVC repo would be E:\ArmyReserve\ESTCP\Machine Learning\software-files\dont-touch\not-code-dvc-repo. Optionally, make this folder available offline for better performance (Windows feature).
 
 
  Try `dvc` by downloading [sample data](data/sample.dvc): `dvc pull data/sample.dvc`   .

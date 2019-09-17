@@ -24,9 +24,12 @@ This repository represents a 'workspace' for both code _and_ data (non-code gene
     On Windows, map \\\pnl\projects to a drive. So the DVC repo would be E:\ArmyReserve\ESTCP\Machine Learning\software-files\dont-touch\not-code-dvc-repo
 
 
- Try `dvc` by downloading sample data: `dvc pull data\sample.dvc`   .
+ Try `dvc` by downloading [sample data](data/sample.dvc): `dvc pull data/sample.dvc`   .
 
 
 # Workflow
 
 Manage source code with `git` (as usual), but also use `dvc` to manage data and generated assets such as notebooks, intermediate files (dvc pipelines), documentation, visualizations, and model files. This separation is enforced with a restrictive [.gitignore](.gitignore). Installing [DVC git hooks](https://dvc.org/doc/commands-reference/install) helps to automate this.
+
+
+<!-- branching? base env -->

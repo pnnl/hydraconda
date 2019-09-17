@@ -1,4 +1,4 @@
-This repository represents a 'workspace' for both code _and_ data (non-code generally). Code is managed by `git` while data is managed by `dvc` ([data science version control](http://dvc.org)).
+This repository represents a 'workspace' for both code (both 'library' type code and scripts) _and_ data (non-code generally). Code is managed by `git` while data is managed by `dvc` ([data science version control](http://dvc.org)).
 
 
 # Setting up workflow
@@ -32,4 +32,4 @@ This repository represents a 'workspace' for both code _and_ data (non-code gene
 Manage source code with `git` (as usual), but also use `dvc` to manage data and generated assets such as notebooks, intermediate files (dvc pipelines), documentation, visualizations, and model files. This separation is enforced with a restrictive [.gitignore](.gitignore). Installing [DVC git hooks](https://dvc.org/doc/commands-reference/install) helps to automate this.
 
 
-<!-- branching? base env -->
+<!-- branching? base env and libs -->

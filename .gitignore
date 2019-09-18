@@ -19,3 +19,5 @@
 # don't store your secrets
 secrets.*
 secret.*
+
+work/envs

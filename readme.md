@@ -1,7 +1,12 @@
 This repository represents a 'workspace' for both code (both 'library' type code and scripts) _and_ data (non-code generally). Code is managed by `git` while data is managed by `dvc` ([data science version control](http://dvc.org)).
 
 
-# Setting up workflow
+# Development Environment Setup
+
+
+Follow [instructions](dev-bootstrap/readme.md) for an automated setup.
+
+Manually,
 
 1. Access Git Code repo
 
@@ -22,6 +27,8 @@ This repository represents a 'workspace' for both code (both 'library' type code
     2. Set the DVC remote (in [.dvc/config](.dvc/config)). A Windows example is hardcoded so change accordingly with `dvc remote modify url <location>`.
     <br>
     On Windows, map \\\pnl\projects to a drive. So the DVC repo would be E:\ArmyReserve\ESTCP\Machine Learning\software-files\dont-touch\not-code-dvc-repo. Optionally, make this folder available offline for better performance (Windows feature).
+
+4. Install conda-env `conda install conda-devenv -c conda-forge`.
 
 
  Try `dvc` by downloading [sample data](data/sample.dvc): `dvc pull data/sample.dvc`   .

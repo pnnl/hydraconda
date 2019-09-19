@@ -3,6 +3,8 @@
 # Now, whitelist anything that's a directory
 !*/
 # And all the file types you're interested in.
+# don't ignore gitignore, hah
+!.gitignore
 # data ver ctrol
 !*.dvc
 # programs
@@ -23,4 +25,4 @@ secret.*
 /envs
 # generated dev env
 environment.yml
-#environment.yaml
+

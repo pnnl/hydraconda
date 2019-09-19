@@ -19,5 +19,8 @@
 # don't store your secrets
 secrets.*
 secret.*
-
-work/envs
+# ignore environments
+/envs
+# generated dev env
+environment.yml
+#environment.yaml

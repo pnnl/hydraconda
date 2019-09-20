@@ -4,7 +4,7 @@ This repository represents a 'workspace' for both code (both 'library' type code
 # Development Environment Setup
 
 
-Follow [instructions](dev-bootstrap/readme.md) for an automated setup.
+Follow [instructions](dev-bootstrap/readme.md) for an automated installation of development tools. However, the DVC remote repo needs to be set up manually (#3.2 below).
 
 Manually,
 
@@ -39,4 +39,7 @@ Manually,
 Manage source code with `git` (as usual), but also use `dvc` to manage data and generated assets such as notebooks, intermediate files (dvc pipelines), documentation, visualizations, and model files. This separation is enforced with a restrictive [.gitignore](.gitignore). Installing [DVC git hooks](https://dvc.org/doc/commands-reference/install) helps to automate this.
 
 
-<!-- branching? base env and libs -->
+<!--
+branching? base env and libs 
+use isse tracker on bitbucket?
+-->

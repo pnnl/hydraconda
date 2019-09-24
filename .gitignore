@@ -18,11 +18,14 @@
 !*.yaml
 !*.yml
 !*.smalljson
+
+
 # don't store your secrets
 secrets.*
 secret.*
 # ignore environments
 /envs
-# generated dev env
+# ignore generated dev env
 environment.yml
-
+# track template 'types'
+!*.template.*

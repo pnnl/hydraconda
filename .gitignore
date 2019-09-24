@@ -5,11 +5,12 @@
 # And all the file types you're interested in.
 # don't ignore gitignore, hah
 !.gitignore
-# data ver ctrol
+# data ver ctrl
 !*.dvc
 # programs
 !*.py
 !*.r
+*/.ipynb_checkpoints
 !*.sh
 !*.cmd
 # doc src

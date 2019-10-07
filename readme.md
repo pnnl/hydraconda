@@ -35,7 +35,7 @@ The tasks aid the following development process.
     All workdirs will depend on at least a baseline of work units (will almost always be at least the 'data-interface')
     but the functionality of the dependencies will change.
 
-2. Develop with git source control.
+2. Manage source and file references.
 
     Manage (source) code (only) with `git` and keep data and generated assets such as notebooks, intermediate files, documentation, visualizations, and model files out of source control.
     This separation is enforced with a restrictive [.gitignore](.gitignore);
@@ -51,7 +51,7 @@ The tasks aid the following development process.
     Reproduction of an execution is achieved when input files, commands, and the execution environment are specified.
     Through a .dvc file, `dvc repro` manages input files and commands (but not the execution environment directly).
     Now, the environment.*.yml files should reflect the development environment.
-    So the way to ensure reproduction of the execution is to take the following steps:
+    So the way to ensure reproduction of the execution is to recreate the development environment as follows:
     1. `> conda remove estcp-<workdir>`
     2. `> conda devenv` (in the workdir)
     3. `> dvc repro <dvcfile>`.

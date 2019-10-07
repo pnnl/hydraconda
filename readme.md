@@ -41,8 +41,8 @@ The tasks aid the following development process.
     This separation is enforced with a restrictive [.gitignore](.gitignore);
     All files are ignored except patterns that are considered (source) code.
 
-    `dvc run` is useful here to declare an execution consisting of input files, commands, and output files.
-    Use `> dvc pull <dvcfile>` to obtain file dependencies.
+    `dvc run` is useful here to declare an execution consisting of input files, commands, and output files which will generate a .dvc file to be source controlled.
+    Use `> dvc pull <dvcfile>` to obtain input files.
 
     It may be useful to, again, create a branch to represent different versions of the work.
 
@@ -56,7 +56,7 @@ The tasks aid the following development process.
     2. `> conda devenv` (in the workdir)
     3. `> dvc repro <dvcfile>`.
 
-4. Commit.
+4. Commit source and files.
 
     The usual `git commit` command has been modified to prepend the commit message with '[workdir]' to help identify top-level work.
     This prefix is taken from the development environment name (not the current directory).

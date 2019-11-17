@@ -9,6 +9,7 @@
 !*.dvc
 # programs
 !*.py
+!*.coco
 !*.r
 */.ipynb_checkpoints
 !*.sh

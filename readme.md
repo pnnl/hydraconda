@@ -119,6 +119,19 @@ The tasks aid the following development process.
         Get access in order to complete the MDMS setup task.
 
 
+# III. Architecture
+
+    at a high level [todo. fill in when firmed up.]
+    data sources  -->   |  1 data interface    --> | apps
+    metadata            |                          | data explorer viz
+    EBCS controls       |                          | interactive data explorer querying
+    (weather)           |                          | (ML use cases)
+    utility meters      |
+    (maintenance)       |
+
+
+
+
 <!--
 use isse tracker on bitbucket?
 -->

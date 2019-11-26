@@ -10,12 +10,14 @@ In addition, execution environments and workflow tasks are managed as well.
 
 ## Structure
 
+The workflow manages a 'work directory' concept: some separated-out unit of work.
+It could be a module/library or a one-off experiment.
 To keep things as simple as possible, 'work directories' (workdir) are the folders directly under the root of the workspace.
 In other words, the workdir structure is flat so the collaborator can immediately identify units of work.
-Nonetheless, each workdir can have its own directory hierarchy.
+Nonetheless, each workdir can have its own directory hierarchy obviously.
 
 A workdir has 'development' and 'run' environment requirements (in separate files).
-Development requirements include run requirements in addition to tools that aid the development process such as code linters and test frameworks (that are not needed to just use what's in the workdir).
+Development requirements typically include run requirements in addition to tools that aid the development process such as code linters and test frameworks (that are not needed to just use what's in the workdir).
 Also, the requirements can include the requirements of other workdirs.
 So, a workdir represents a unit of work that is separated out, but can depend on other workdirs.
 For example, in this repository, the 'data-demo' workdir has the run requirements of 'data-interface' _in addition to_ requirements to create visualizations (that are not needed to just use the the interface).
@@ -31,7 +33,8 @@ The tasks aid the following development process.
     Initializing a workdir is accomplished by invoking the `work-on` task: `> invoke work-on <workdirname>`.
     Then, declare dependencies by modifying the environment.devenv.yml and environment.run.yml files (in the created directory).
 
-    Before initilizing the workdir however, it is recommended to work on a separate git branch to 'freeze' the workdir dependencies.
+    The `work-on` task will initially commit the newly created files on the current branch (most likely 'master').
+    However, after the initial commit, it is recommended to work on a separate git branch to 'freeze' the workdir code dependencies.
     All workdirs will depend on at least a baseline of work units (will almost always be at least the 'data-interface')
     but the functionality of the dependencies will change.
 
@@ -121,12 +124,12 @@ The tasks aid the following development process.
 
 # III. Architecture
 
-    at a high level [todo. fill in when firmed up.]
+    at a high level [todo. fill in when firmed up. rotate.]
     data sources  -->   |  1 data interface    --> | apps
     metadata            |                          | data explorer viz
     EBCS controls       |                          | interactive data explorer querying
     (weather)           |                          | (ML use cases)
-    utility meters      |
+    utility meters      |                          | (ML experiments)
     (maintenance)       |
 
 

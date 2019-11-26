@@ -79,7 +79,7 @@ The tasks aid the following development process.
     Then obtain source with
     `> git clone https://stash.pnnl.gov/scm/usarml/workspace-code.git workspace`.
     <br>
-    The source was cloned into the 'workspace' directory even though it's called 'workspace-code' to emphasize that code and non-code will combine in the directory (see Workflow section below).
+    The source was cloned into the 'workspace' directory even though it's called 'workspace-code' to emphasize that code and non-code will combine in the directory (see Workflow section above).
 
 2. **Project Tools**
 

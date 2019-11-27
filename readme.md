@@ -22,21 +22,42 @@ Also, the requirements can include the requirements of other workdirs.
 So, a workdir represents a unit of work that is separated out, but can depend on other workdirs.
 For example, in this repository, the 'data-demo' workdir has the run requirements of 'data-interface' _in addition to_ requirements to create visualizations (that are not needed to just use the the interface).
 
+All workdirs will depend on a baseline of the dependencies of other workdirs (which will almost always be at least the 'data-interface').
+Also the work directory path will be appended to the PYTHONPATH environment variable in the run environment by default.
+This makes Python packages in the directory visible to workdirs that depend on it.
+
 ## Process
 
 The structure is formalized by the tasks that are defined in `invoke`.
 The tasks (try to) align code, files, and execution environments.
 The tasks aid the following development process.
 
-1. Initialize workdir.
+1. Initialize and resume work in work directories.
 
-    Initializing a workdir is accomplished by invoking the `work-on` task: `> invoke work-on <workdirname>`.
-    Then, declare dependencies by modifying the environment.devenv.yml and environment.run.yml files (in the created directory).
+    The `work-on` task (`> invoke work-on <workdirname>`) is intended to be an entry point into work by partially automating the following process.
+    Tasks that are not automated can be completed by following instructions when prompted.
 
-    The `work-on` task will initially commit the newly created files on the current branch (most likely 'master').
-    However, after the initial commit, it is recommended to work on a separate git branch to 'freeze' the workdir code dependencies.
-    All workdirs will depend on at least a baseline of work units (will almost always be at least the 'data-interface')
-    but the functionality of the dependencies will change.
+    0. Initialization
+    
+        Directory contents
+
+        A work directory (with environment files) will be created if one does not exist.
+
+        Source control
+
+        After that, the newly created files will be committed to source as an initial `git` commit on the current branch (most likely the 'master' branch).
+        However, after the initial commit, it is recommended to work on a separate git branch to 'freeze' the workdir code dependencies as they will by subject to change.
+        
+        Environment
+
+        Declare the dependencies by modifying the environment.devenv.yml and environment.run.yml files (in the created directory).
+        See conda [devenv documentation](https://conda-devenv.readthedocs.io/en/latest/).
+
+
+    1. Environment check
+    <br>
+    Once a workdir has been initialized, the task will instruct to switch to the workdir environment and directory.
+
 
 2. Manage source and file references.
 

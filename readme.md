@@ -10,25 +10,29 @@ In addition, execution environments and workflow tasks are managed as well.
 
 ## Structure
 
-The workflow manages a 'work directory' concept: some separated-out unit of work.
+The workflow manages a 'work directory' (workdir) concept: some separated-out unit of work.
 It could be a module/library or a one-off experiment.
-To keep things as simple as possible, 'work directories' (workdir) are the folders directly under the root of the workspace.
-In other words, the workdir structure is flat so the collaborator can immediately identify units of work.
+To keep things as simple as possible, workdirs are the folders directly under the root of the workspace.
+The workdir structure is flat so collaborators can immediately identify units of work.
 Nonetheless, each workdir can have its own directory hierarchy obviously.
 
 A workdir has 'development' and 'run' environment requirements (in separate files).
-Development requirements typically include run requirements in addition to tools that aid the development process such as code linters and test frameworks (that are not needed to just use what's in the workdir).
-Also, the requirements can include the requirements of other workdirs.
-So, a workdir represents a unit of work that is separated out, but can depend on other workdirs.
-For example, in this repository, the 'data-demo' workdir has the run requirements of 'data-interface' _in addition to_ requirements to create visualizations (that are not needed to just use the the interface).
+Development requirements typically include the run requirements in addition to tools that aid the development process such as code linters and test frameworks (that are not needed to just use what's in the workdir in a derivative work).
+To achieve this, each environment file has an 'includes' and 'dependencies' section.
+The 'includes' include other environment files (in other workdirs) while the 'dependencies' refer to published packages.
+So, the 'includes' section in the environment files can be thought of as 'internal' dependencies
+while the 'dependencies' section can be thought of as 'external' dependencies.
+However, as mentioned previously, run requirements shouldn't 'include' dev requirements.
 
-All workdirs will depend on a baseline of the dependencies of other workdirs (which will almost always be at least the 'data-interface').
+All workdirs will depend on a baseline of (internal) workdirs (which, in turn, have a set of external dependencies).
 Also the work directory path will be appended to the PYTHONPATH environment variable in the run environment by default.
 This makes Python packages in the directory visible to workdirs that depend on it.
 
+So, a workdir represents a unit of work that is separated out, but can depend/build on other workdirs.
+
 ## Process
 
-The structure is formalized by the tasks that are defined in `invoke`.
+The workflow is formalized by the tasks that are defined in `invoke`.
 The tasks (try to) align code, files, and execution environments.
 The tasks aid the following development process.
 

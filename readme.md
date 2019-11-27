@@ -39,20 +39,16 @@ The tasks aid the following development process.
 
     0. Initialization of
     
-        Directory contents
-        
+        *Directory contents.*
         A work directory (with environment files) will be created if one does not exist.
 
-        Source control
-
+        *Source control.*
         After that, the newly created files will be committed to source as an initial `git` commit on the current branch (most likely the 'master' branch).
         However, after the initial commit, it is recommended to work on a separate git branch to 'freeze' the workdir code dependencies as they will by subject to change.
         
-        Environment
-
+        *Environment.*
         Declare the dependencies by modifying the environment.devenv.yml and environment.run.yml files (in the created directory).
         See conda [devenv documentation](https://conda-devenv.readthedocs.io/en/latest/).
-
 
     1. Environment check
 

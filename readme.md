@@ -37,10 +37,10 @@ The tasks aid the following development process.
     The `work-on` task (`> invoke work-on <workdirname>`) is intended to be an entry point into work by partially automating the following process.
     Tasks that are not automated can be completed by following instructions when prompted.
 
-    0. Initialization
+    0. Initialization of
     
         Directory contents
-
+        
         A work directory (with environment files) will be created if one does not exist.
 
         Source control
@@ -55,9 +55,8 @@ The tasks aid the following development process.
 
 
     1. Environment check
-    <br>
-    Once a workdir has been initialized, the task will instruct to switch to the workdir environment and directory.
 
+        Once a workdir has been initialized, the task will instruct to switch to the workdir environment and directory.
 
 2. Manage source and file references.
 

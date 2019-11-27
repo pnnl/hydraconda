@@ -6,7 +6,7 @@ In addition, execution environments and workflow tasks are managed as well.
 * **Code**, representing fuctionality, configuration, and file _references_ is managed by `git`.
 * **Files** are managed by `dvc` ([data science version control](http://dvc.org)).
 * **Environments** are managed by [`conda`](https://docs.conda.io) and [`conda devenv`](https://conda-devenv.readthedocs.io).
-* **Tasks** are mangaged by [`invoke`](http://docs.pyinvoke.org).
+* **Tasks** are managed by [`invoke`](http://docs.pyinvoke.org).
 
 ## Structure
 

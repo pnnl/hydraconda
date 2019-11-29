@@ -29,6 +29,7 @@ Also the work directory path will be appended to the PYTHONPATH environment vari
 This makes Python packages in the directory visible to workdirs that depend on it.
 
 So, a workdir represents a unit of work that is separated out, but can depend/build on other workdirs.
+See the [workflow-demo](./workflow-demo/readme.md) (in the workflow-branch).
 
 ## Process
 

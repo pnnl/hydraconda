@@ -20,7 +20,7 @@
 !*.yaml
 !*.yml
 !*.smalljson
-*.graphql
+!*.graphql
 
 # don't store your secrets
 secrets.*

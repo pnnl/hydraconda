@@ -20,7 +20,10 @@
 !*.yaml
 !*.yml
 !*.smalljson
+# graphql schema
 !*.graphql
+# track template 'types'
+!*.template.*
 
 # don't store your secrets
 secrets.*
@@ -29,5 +32,5 @@ secret.*
 /envs
 # ignore generated dev env
 environment.yml
-# track template 'types'
-!*.template.*
+# ignore (generated) snapshots b/c they're getting big
+**/snapshots

@@ -11,7 +11,7 @@
 !*.py
 !*.coco
 !*.r
-*/.ipynb_checkpoints
+**/.ipynb_checkpoints
 !*.sh
 !*.cmd
 # doc src

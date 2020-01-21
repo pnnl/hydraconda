@@ -76,9 +76,8 @@ The tasks aid the following development process.
     Through a .dvc file, `dvc repro` manages input files and commands (but not the execution environment directly).
     Now, the environment.*.yml files should reflect the development environment.
     So the way to ensure reproduction of the execution is to recreate the development environment as follows:
-    1. `> conda remove estcp-<workdir>`
-    2. `> conda devenv` (in the workdir)
-    3. `> dvc repro <dvcfile>`.
+    1. `> inv remove-work-env --work-dir <workdir>`
+    2. `> dvc repro <dvcfile>`.
 
 4. Commit source and files.
 

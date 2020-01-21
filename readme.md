@@ -139,9 +139,9 @@ See [worflow-demo](https://stash.pnnl.gov/projects/USARML/repos/workspace-code/b
 
         The DVC setup task should inform you of a downloaded sample dataset.
 
-    * MDMS
+    * ~~MDMS~~
 
-        Get access in order to complete the MDMS setup task.
+        ~~Get access in order to complete the MDMS setup task.~~
 
 
 # III. Architecture

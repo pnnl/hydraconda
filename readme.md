@@ -145,15 +145,44 @@ See [worflow-demo](https://stash.pnnl.gov/projects/USARML/repos/workspace-code/b
 
 # III. Architecture
 
-    at a high level [todo. fill in when firmed up. rotate.]
-    data sources  -->   |  1 data interface    --> | apps
-    metadata            |                          | data explorer viz
-    EBCS controls       |                          | interactive data explorer querying
-    (weather)           |                          | (ML use cases)
-    utility meters      |                          | (ML experiments)
-    (maintenance)       |
+
+The trunk (master branch) contains baseline/common assets (code, data files).
+They can be organized as a 'stack' where top layers build on lower layers.
 
 
+* Layer 0: Workflow tools
+
+    source code mgt.: `git` is the fundamental 'entry point' into the workspace.
+    This is closely followed by `dvc` as they work together.
+
+
+* Layer 1: (Raw) data files
+
+    Mainly MDMS files, EBCS files, and meta data.
+    These are stored in /data.
+
+* Layer 2: 'Data interface'
+
+    Metadata database: Structures relationships in the raw data and exposes the relationships as a Python-based object relational map (ORM).
+
+* Layer 3: 'API'
+
+    The API is differentiated from the 'data interface' since it hides 'raw' data connections that are not of interest to an analyst.
+    Instead, the API is concerned with presenting a meaningful querying interface to the analyst.
+
+* Layer 4: Analysis
+
+    Examples of analyst-generated assets: visualizations, models, and documents.
+    They may be stored as (non- source code) files managed by DVC.
+
+* Layer 5: Applications
+
+    Applications are essentially a manifestation of use cases.
+    For example, an user interface could be presented to identify potential equipment faults.
+
+Generally, lower layers are firmer than upper layers.
+For example, data are expected to be relatively fixed.
+However, the API can change according to need.
 
 
 <!--

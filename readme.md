@@ -86,7 +86,8 @@ The tasks aid the following development process.
 
     After committing code, representing functionality and an execution process, generated assets should be shared with a `dvc push`.
     Installing [DVC git hooks](https://dvc.org/doc/commands-reference/install) helps to automate following a `git push` with a `dvc push`.
-    However, in this project, install the hooks from the task `inv setup.create-dvc-git-hooks`.
+    However, in this project, the hooks are installed by default.
+    If not, `inv setup.create-dvc-git-hooks`.
 
 See [worflow-demo](https://stash.pnnl.gov/projects/USARML/repos/workspace-code/browse/workflow-demo/readme.md?at=workflow-demo). 
 

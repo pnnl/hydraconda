@@ -37,6 +37,8 @@ The workflow is formalized by the tasks that are defined in `invoke`.
 The tasks (try to) align code, files, and execution environments.
 The tasks aid the following development process.
 
+0. Activate project environment: `> conda activate estcp-project`.
+
 1. Initialize and resume work in work directories.
 
     The `work-on` task (`> invoke work-on <workdirname>`) is intended to be an entry point into work by partially automating the following process.

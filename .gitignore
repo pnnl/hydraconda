@@ -5,6 +5,8 @@
 # And all the file types you're interested in.
 # don't ignore gitignore, hah
 !.gitignore
+# scripts
+!*.cmdlines
 # data ver ctrl
 !*.dvc
 # programs

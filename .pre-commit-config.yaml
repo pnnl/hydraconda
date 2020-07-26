@@ -1,0 +1,31 @@
+repos:
+- hooks:
+  - entry: run-in-project invoke project._git.prepare-commit-msg-hook
+    id: prepend-workdir-to-commit-msg
+    language: system
+    name: prepend work directory to git commit message
+    stages:
+    - prepare-commit-msg
+  repo: local
+- hooks:
+  - id: check-yaml
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+  repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.1.0
+- hooks:
+  - id: dvc-pre-commit
+    language_version: python3
+    stages:
+    - commit
+  - id: dvc-pre-push
+    language_version: python3
+    stages:
+    - push
+  - always_run: true
+    id: dvc-post-checkout
+    language_version: python3
+    stages:
+    - post-checkout
+  repo: https://github.com/iterative/dvc
+  rev: master

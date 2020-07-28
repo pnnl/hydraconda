@@ -37,3 +37,6 @@ secret.*
 environment.yml
 # ignore (generated) snapshots b/c they're getting big
 **/snapshots
+# ignore generated executables
+**/scripts/bin
+**/wbin

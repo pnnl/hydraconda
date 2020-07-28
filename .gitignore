@@ -5,17 +5,18 @@
 # And all the file types you're interested in.
 # don't ignore gitignore, hah
 !.gitignore
-# scripts
-!*.cmdlines
 # data ver ctrl
 !*.dvc
-# programs
+# scripts and progs
+!*.cmdlines
+!*.sh
+!*.bat
+!*.cmd
 !*.py
 !*.coco
 !*.r
+#
 **/.ipynb_checkpoints
-!*.sh
-!*.cmd
 # doc src
 !*.md
 # assuming (small) config type yamls

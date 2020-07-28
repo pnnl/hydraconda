@@ -1,4 +1,4 @@
-todo: update
+todo: update. dev env procedure is a oneliner in bootstrap
 
 # I. Workflow
 
@@ -47,14 +47,14 @@ The tasks aid the following development process.
     Tasks that are not automated can be completed by following instructions when prompted.
 
     0. Initialization of
-    
+
         *Directory contents.*
         A work directory (with environment files) will be created if one does not exist.
 
         *Source control.*
         After that, the newly created files will be committed to source as an initial `git` commit on the current branch (most likely the 'master' branch).
         However, after the initial commit, it is recommended to work on a separate git branch to 'freeze' the workdir code dependencies as they will by subject to change.
-        
+
         *Environment.*
         Declare the dependencies by modifying the environment.devenv.yml and environment.run.yml files (in the created directory).
         See conda [devenv documentation](https://conda-devenv.readthedocs.io/en/latest/).
@@ -93,12 +93,12 @@ The tasks aid the following development process.
     However, in this project, the hooks are installed by default.
     If not, `inv setup.create-dvc-git-hooks`.
 
-See [worflow-demo](https://stash.pnnl.gov/projects/USARML/repos/workspace-code/browse/workflow-demo/readme.md?at=workflow-demo). 
+See [worflow-demo](https://stash.pnnl.gov/projects/USARML/repos/workspace-code/browse/workflow-demo/readme.md?at=workflow-demo).
 
 # II. Development Environment Setup
 
 
-0. **_Base_ Tools** 
+0. **_Base_ Tools**
 
     Follow [instructions](dev-bootstrap/readme.md) for an automated installation of _base_ development tools.
 
@@ -115,7 +115,7 @@ See [worflow-demo](https://stash.pnnl.gov/projects/USARML/repos/workspace-code/b
     After that, from the 'project' directory, install [project-specific tools](project/environment.run.yml) into a _project_ base environment with:
     `> conda devenv`.
 
-    After entering the development environment, with `> conda activate estcp-project`, check that you can list development [tasks](project/estcp_project/tasks/tasks.py) with: `> inv -l`. 
+    After entering the development environment, with `> conda activate estcp-project`, check that you can list development [tasks](project/estcp_project/tasks/tasks.py) with: `> inv -l`.
     <br>
     Use `-h` before the task name to learn about the task like:
     ```

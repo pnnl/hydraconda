@@ -1,5 +1,6 @@
 repos:
 - hooks:
+  # most important
   - entry: run-in-project invoke project._git.prepare-commit-msg-hook
     id: prepend-workdir-to-commit-msg
     language: system

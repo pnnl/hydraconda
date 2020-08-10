@@ -7,6 +7,7 @@
 !.gitignore
 # data ver ctrl
 !*.dvc
+!dvc.lock
 # scripts and progs
 !*.cmdlines
 !*.sh

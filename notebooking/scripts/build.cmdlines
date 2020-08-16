@@ -1,2 +1,5 @@
-cd ${WORK_DIR_PATH}
+# 1st line just eats the (file) args
+# so precommit works
+echo building
 jupyter-book build book --path-output build
+dvc commit dvc.yaml:book -f

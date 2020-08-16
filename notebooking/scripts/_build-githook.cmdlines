@@ -1,0 +1,4 @@
+# 1st line just eats the (file) args so precommit works
+echo building
+build
+dvc commit dvc.yaml:book -f

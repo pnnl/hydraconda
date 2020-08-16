@@ -1,2 +1,1 @@
-cd ${WORK_DIR_PATH}/book
-jupyter notebook
+jupyter notebook ${WORK_DIR_PATH}/book

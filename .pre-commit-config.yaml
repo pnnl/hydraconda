@@ -9,7 +9,7 @@ repos:
     stages:
     - prepare-commit-msg
 
-  - entry: run-in-notebooking build
+  - entry: run-in-notebooking build #_build-githook
     id: build-project-docs
     files: notebooking\/book\/.*
     language: system

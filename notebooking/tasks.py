@@ -16,7 +16,8 @@ def build_book(ctx):
 ns.add_task(build_book)
 
 @task#(pre=[build_book])
-def _git_hook(ctx, *_, **__): # just consumes the (file) args so precommit git hook works
+def _git_hook(ctx, *_, **__): # using magicinvoke, just consumes the (file) args so precommit git hook works
+    # https://github.com/pyinvoke/invoke/issues/378
     """
     git hook to commit contents of book to dvc
     """

@@ -17,4 +17,4 @@
 # you should specify a kernel associated with the project
 
 # %%
-1232
+'new'

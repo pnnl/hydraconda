@@ -1,0 +1,39 @@
+# don't install stuff in this env
+#                           add more work dirs if needed
+{% set dev_req =     not is_included %}
+{% set run_req =         is_included %}
+{% set wrapped_exe = not is_included %}
+
+{% set included_workdirs = ['project', ] %}
+
+dependencies:
+    - python=3.7        # [not is_included] TODO p38 problem on windows asyncio NotImplementedError
+    - jupyter           # [wrapped_exe]
+    - jupytext          # [wrapped_exe]
+    - nb_conda          # [not is_included]
+    - nb_conda_kernels  # [not is_included]
+    #- nbpresent not installing creating conflicts # [not is_included]
+    - papermill         # [wrapped_exe]
+    #- fastai::nbdev     # [run_req] interesting but not great
+    - pip
+    - pip:
+        - jupyter-book # TODO: where is the conda pkg???
+environment:
+  # probably want to append PATH and PYTHONPATH in your env
+  PATH:
+    - '{{ os.path.join(root, "wbin") }}'
+    - '{{root}}'
+  PYTHONPATH:
+    - '{{root}}'
+  # don't define the following in envs that include this
+  WORK_DIR: '{{  os.path.basename(root) }}'                       # [not is_included]
+  WORKDIR:  '{{  os.path.basename(root) }}'                       # [not is_included]
+  WORK_DIR_PATH: '{{root}}'                                       # [not is_included]
+  WORKDIR_PATH:  '{{root}}'                                       # [not is_included]
+  PROJECTROOT:  '{{ os.path.abspath(os.path.join(root, '..')) }}' # [not is_included]
+  PROJECT_ROOT: '{{ os.path.abspath(os.path.join(root, '..')) }}' # [not is_included]
+includes:
+{% for included in included_workdirs %}
+  - '{{root}}/../{{included}}/environment.devenv.yml'
+{% endfor %}
+name: {{'estcp-' + os.path.basename(root)}}

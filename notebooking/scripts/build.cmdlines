@@ -1,0 +1,2 @@
+cd ${WORK_DIR_PATH}
+jupyter-book build book --path-output build

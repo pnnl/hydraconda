@@ -1,0 +1,9 @@
+---
+stages:
+
+    book:
+        deps: #let the build system handle it?
+            - book
+        cmd:  run-in-notebooking build
+        outs:
+            - build

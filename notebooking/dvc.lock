@@ -1,0 +1,8 @@
+book:
+  cmd: run-in-notebooking build
+  deps:
+  - path: book
+    md5: e440efe66e1d011051e2752a8359d79e.dir
+  outs:
+  - path: build
+    md5: 56f5289569a609c94cbe701d1831466e.dir

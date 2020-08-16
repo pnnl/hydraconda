@@ -1,0 +1,2 @@
+# Always pair ipynb notebooks to py:percent files
+default_jupytext_formats : "ipynb,py:percent"

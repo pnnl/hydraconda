@@ -18,6 +18,8 @@
 !*.r
 #
 **/.ipynb_checkpoints
+# jupyter-book doc building dir
+**/_build
 # doc src
 !*.md
 # assuming (small) config type yamls

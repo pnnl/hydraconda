@@ -1,0 +1,7 @@
+cd ${WORK_DIR_PATH}
+project work-dir.action.create-exec-wrapper -e jupyter            --test     --work-dir $WORK_DIR
+project work-dir.action.create-exec-wrapper -e jupyter-notebook   --test     --work-dir $WORK_DIR
+project work-dir.action.create-exec-wrapper -e jupytext           --test     --work-dir $WORK_DIR
+project work-dir.action.create-exec-wrapper -e papermill          --test     --work-dir $WORK_DIR
+dvc pull book
+# edit-jupyter-book

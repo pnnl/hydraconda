@@ -1,5 +1,0 @@
-# 1st line just consumes the (file) args so precommit git hook works
-echo eating git hook args umm num num num
-${WORK_DIR_PATH}/scripts/bin/build
-dvc commit ${WORK_DIR_PATH}/dvc.yaml:book -f
-git add    ${WORK_DIR_PATH}/dvc.lock

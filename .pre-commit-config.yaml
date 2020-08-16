@@ -1,4 +1,5 @@
 repos:
+
 - hooks:
   # most important
   - entry: run-in-project invoke project._git.prepare-commit-msg-hook
@@ -7,28 +8,46 @@ repos:
     name: prepend work directory to git commit message
     stages:
     - prepare-commit-msg
+
+  - entry: run-in-notebooking build
+    id: build-project-docs
+    files: notebooking\/book\/.*
+    language: system
+    name: build project documentation
+
   repo: local
+
 - hooks:
+
   - id: check-yaml
     exclude: environment.devenv.yml
+
   - id: end-of-file-fixer
+
   - id: trailing-whitespace
+
   - id: check-added-large-files
+
   repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v3.1.0
+
 - hooks:
+
   - id: dvc-pre-commit
     language_version: python3
     stages:
     - commit
+
   - id: dvc-pre-push
     language_version: python3
     stages:
     - push
+
   - always_run: true
     id: dvc-post-checkout
     language_version: python3
     stages:
     - post-checkout
+
   repo: https://github.com/iterative/dvc
   rev: master

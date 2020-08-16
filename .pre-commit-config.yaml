@@ -2,7 +2,7 @@ repos:
 
 - hooks:
   # most important
-  - entry: run-in-project invoke project._git.prepare-commit-msg-hook
+  - entry: run-in-project project project._git.prepare-commit-msg-hook
     id: prepend-workdir-to-commit-msg
     language: system
     name: prepend work directory to git commit message

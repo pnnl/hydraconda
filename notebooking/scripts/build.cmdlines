@@ -3,3 +3,4 @@
 echo building
 jupyter-book build book --path-output build
 dvc commit dvc.yaml:book -f
+git add dvc.yaml

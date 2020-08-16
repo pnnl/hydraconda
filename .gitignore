@@ -16,10 +16,6 @@
 !*.py
 !*.coco
 !*.r
-#
-**/.ipynb_checkpoints
-# jupyter-book doc building dir
-**/_build
 # doc src
 !*.md
 # assuming (small) config type yamls
@@ -31,6 +27,8 @@
 # track template 'types'
 !*.template.*
 
+
+# ...but still
 # don't store your secrets
 secrets.*
 secret.*
@@ -43,3 +41,5 @@ environment.yml
 # ignore generated executable scripts
 **/scripts/bin
 **/wbin
+# ignore checkpoint files
+**/.ipynb_checkpoints

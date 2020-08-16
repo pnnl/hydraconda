@@ -7,6 +7,7 @@
 {% set included_workdirs = ['project', ] %}
 
 dependencies:
+    - invoke            # [not is_included]
     - python=3.7        # [not is_included] TODO p38 problem on windows asyncio NotImplementedError
     - jupyter           # [wrapped_exe]
     - jupytext          # [wrapped_exe]

@@ -21,7 +21,7 @@ repos:
 - hooks:
 
   - id: check-yaml
-    exclude: environment.devenv..*.yml
+    exclude: environment.devenv..*yml
 
   - id: end-of-file-fixer
 

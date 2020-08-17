@@ -2,14 +2,14 @@ repos:
 
 - hooks:
   # most important
-  - entry: run-in-project project project._git.prepare-commit-msg-hook
+  - entry: project project._git.prepare-commit-msg-hook
     id: prepend-workdir-to-commit-msg
     language: system
     name: prepend work directory to git commit message
     stages:
     - prepare-commit-msg
 
-  - entry: run-in-notebooking notebooking _git-hook
+  - entry: notebooking/wbin/run-in.sh _git-hook
     id: build-project-docs
     files: notebooking\/book\/.*
     language: system

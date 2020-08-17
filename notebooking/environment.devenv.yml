@@ -19,6 +19,7 @@ dependencies:
     - pip
     - pip:
         - jupyter-book # TODO: where is the conda pkg???
+        - magicinvoke
 environment:
   # probably want to append PATH and PYTHONPATH in your env
   PATH:

@@ -9,7 +9,7 @@ repos:
     stages:
     - prepare-commit-msg
 
-  - entry: notebooking/wbin/run-in.sh _git-hook
+  - entry: notebooking _git-hook
     id: build-project-docs
     files: notebooking\/book\/.*
     language: system

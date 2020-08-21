@@ -10,8 +10,6 @@ dependencies:
     - python=3.7        # [not is_included] TODO p38 problem on windows asyncio NotImplementedError
     - jupyter           # [wrapped_exe]
     - jupytext          # [wrapped_exe]
-    - nb_conda          # [not is_included]
-    - nb_conda_kernels  # [not is_included]
     #- nbpresent not installing creating conflicts # [not is_included]
     - papermill         # [wrapped_exe]
     #- fastai::nbdev     # [run_req] interesting but not great

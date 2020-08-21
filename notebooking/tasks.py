@@ -6,6 +6,23 @@ work_dir_pth = Path(__file__).parent
 
 ns = Collection()
 
+#@task
+def _(ctx):
+    ctx.run(f"jupyter notebook")
+#ns.add_task(test)
+
+# not needed i think b/c kernels are installed on every jupyter cmd: jupter_config.py
+# @task
+# def install_kernels(ctx):
+#     """
+#     install project jupyter kernels
+#     """
+#     from kernels import KernelSpecManager
+#     ksm = KernelSpecManager()
+#     #ksm.install_kernel_specs()
+# ns.add_task(install_kernels)
+
+
 @task
 def build_book(ctx):
     """

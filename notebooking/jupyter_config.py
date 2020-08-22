@@ -1,6 +1,11 @@
 # not really used but just clears and installs associated kernels on every jupyter app
-from kernels import KernelSpecManager
-KernelSpecManager()
+try:
+    from notebooking_kernels import KernelSpecManager
+    KernelSpecManager()#.install_kernel_specs()
+except RecursionError:
+    # some problem that shows up on env setup using conda devenv TODO
+    # https://github.com/chendaniely/pyprojroot/issues/16
+    pass
 
 ## The kernel spec manager class to use. Should be a subclass of
 #  `jupyter_client.kernelspec.KernelSpecManager`.

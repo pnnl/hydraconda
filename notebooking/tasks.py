@@ -17,7 +17,7 @@ def _(ctx):
 #     """
 #     install project jupyter kernels
 #     """
-#     from kernels import KernelSpecManager
+#     from notebooking_kernels import KernelSpecManager
 #     ksm = KernelSpecManager()
 #     #ksm.install_kernel_specs()
 # ns.add_task(install_kernels)

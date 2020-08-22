@@ -13,10 +13,10 @@ dependencies:
     #- nbpresent not installing creating conflicts # [not is_included]
     - papermill         # [wrapped_exe]
     #- fastai::nbdev     # [run_req] interesting but not great
-    - pip
+    - pip               # [not is_included]
     - pip:
-        - jupyter-book # TODO: where is the conda pkg???
-        - magicinvoke
+        - jupyter-book  # [wrapped_exe]
+        - magicinvoke   # [dev_req]
 environment:
   # probably want to append PATH and PYTHONPATH in your env
   PATH:

@@ -2,7 +2,7 @@ book:
   cmd: run-in-notebooking build
   deps:
   - path: book
-    md5: 9d8362a5a61faaf5d8abb78fa0bb3cce.dir
+    md5: d7b4cc061563c652af9727c2efc84faf.dir
   outs:
   - path: build
-    md5: abb259c89d9a07bdbdc9cc8cc5cd4e6e.dir
+    md5: 91bd8473a4fe3ecd39fc1fc66ad13576.dir

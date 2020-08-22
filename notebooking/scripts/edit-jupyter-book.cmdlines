@@ -1,1 +1,1 @@
-jupyter notebook ${WORK_DIR_PATH}/book
+jupyter notebook --notebook-dir=${WORK_DIR_PATH}/book

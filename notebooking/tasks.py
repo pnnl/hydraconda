@@ -47,7 +47,7 @@ ns.add_task(_git_hook)
 
 
 @task(pre=[build_book])
-def share(ctx, overwrite=False):
+def share_book(ctx, overwrite=False):
     """
     copy built book to share location
     """
@@ -55,7 +55,7 @@ def share(ctx, overwrite=False):
     cur_hash   = ctx.run('git rev-parse              HEAD', hide='out').stdout.replace('\n','')
     import yaml
     book_shr = Path(yaml.safe_load(open(work_dir_pth / 'config.yml'))['share']['loc'])
-    assert(book_shr.exists())
+    assert(book_shr.exists())  # assertion of existance of sharing location
     branch_dst = book_shr / cur_branch
     hash_dst =   book_shr / cur_hash
     book_src = work_dir_pth / 'build' / '_build' / 'html'
@@ -78,7 +78,7 @@ def share(ctx, overwrite=False):
     cpy(branch_dst)
     cpy(hash_dst)
     return
-ns.add_task(share)
+ns.add_task(share_book)
 
 
 ######

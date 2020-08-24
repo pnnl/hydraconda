@@ -37,7 +37,7 @@ ns.add_task(build_book)
 def _git_hook(ctx, *_, **__): # using magicinvoke, just consumes the (file) args so precommit git hook works
     # https://github.com/pyinvoke/invoke/issues/378
     """
-    git hook to commit contents of book to dvc
+    (private for git. don't use). git hook to commit contents of book to dvc
     """
     with ctx.cd(str(work_dir_pth)):
         ctx.run(f"dvc commit {work_dir_pth / 'dvc.yaml'}:book -f", echo=True)

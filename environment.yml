@@ -1,0 +1,6 @@
+channels:
+  - conda-forge
+dependencies:
+  - conda-devenv
+  - git # puts bash in windows
+name: base

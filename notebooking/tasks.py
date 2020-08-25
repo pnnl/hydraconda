@@ -60,7 +60,7 @@ def share_book(ctx, overwrite=False):
     hash_dst =   book_shr / cur_hash
     book_src = work_dir_pth / 'build' / '_build' / 'html'
 
-    def cpy(dst):
+    def cpy(dst, overwrite=overwrite):
         from shutil import rmtree
         if dst.exists():
             if overwrite:
@@ -75,8 +75,8 @@ def share_book(ctx, overwrite=False):
             print(f'copying to {dst}')
             copytree(book_src, dst, )
 
-    cpy(branch_dst)
-    cpy(hash_dst)
+    cpy(branch_dst, overwrite=True)
+    cpy(hash_dst, overwrite=overwrite)
     return
 ns.add_task(share_book)
 

@@ -2,7 +2,7 @@ book:
   cmd: notebooking build-book
   deps:
   - path: book
-    md5: 1c49db57427779d48b496266d969183b.dir
+    md5: 2fe7f08de79d94600296131a7086da20.dir
   outs:
   - path: build
-    md5: eb328441b5916d8552c4086214815f5a.dir
+    md5: 4396c28dca6398e59a52c7d15d08d510.dir

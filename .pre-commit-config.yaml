@@ -25,8 +25,6 @@ repos:
 
   - id: end-of-file-fixer
 
-  - id: trailing-whitespace
-
   - id: check-added-large-files
 
   repo: https://github.com/pre-commit/pre-commit-hooks

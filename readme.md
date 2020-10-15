@@ -111,6 +111,7 @@ The tasks aid the following development process.
     The only required configuration is setting the DVC repository in the project [configuration file](./project/config.yml).
     This repo is on the shared drive at \\\pnl\projects\ArmyReserve\ESTCP\Machine Learning\software-files\dont-touch\not-code-dvc-repo, so check that you can access it.
     Optionally, make this folder available offline for better performance (Windows feature). <br>
+
     > Do not modify this directory (yourself)!
 
 0. **Bootstrap**
@@ -120,22 +121,19 @@ The tasks aid the following development process.
 
 2. **Check project tools**
 
-    After that, from the 'project' directory, install [project-specific tools](project/environment.run.yml) into a _project_ base environment with:
-    `> conda devenv`.
-
     After entering the project development environment, with `> conda activate estcp-project`, check that you can list development [tasks](project/estcp_project/tasks/tasks.py) with: `> project -l`.
     <br>
-    Use `-h` before the task name to learn about the task like:
+Use `-h` before the task name to learn about the task like:
     ```
     (estcp-project) > project -h project.info.work-dir-list
     Usage: inv[oke] [--core-opts] list-work-dirs [other tasks here ...]
-
+    
     Docstring:
     Lists work directories
 
     Options:
     none
-    ```
+```
 
 
 # III. Architecture

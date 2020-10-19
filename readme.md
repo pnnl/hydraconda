@@ -124,6 +124,7 @@ The tasks aid the following development process.
     After entering the project development environment, with `> conda activate estcp-project`, check that you can list development [tasks](project/estcp_project/tasks/tasks.py) with: `> project -l`.
     <br>
 Use `-h` before the task name to learn about the task like:
+    
     ```
     (estcp-project) > project -h project.info.work-dir-list
     Usage: inv[oke] [--core-opts] list-work-dirs [other tasks here ...]
@@ -133,7 +134,7 @@ Use `-h` before the task name to learn about the task like:
 
     Options:
     none
-```
+	```
 
 
 # III. Architecture

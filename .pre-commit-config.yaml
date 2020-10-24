@@ -23,8 +23,6 @@ repos:
   - id: check-yaml
     exclude: environment.devenv..*yml
 
-  - id: end-of-file-fixer
-
   - id: check-added-large-files
 
   repo: https://github.com/pre-commit/pre-commit-hooks

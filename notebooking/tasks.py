@@ -1,5 +1,5 @@
 from invoke import Collection, task
-from estcp_project import project_root
+from project import project_root
 from pathlib import Path
 
 work_dir_pth = Path(__file__).parent

@@ -2,10 +2,10 @@
 # but if you were to treat the whole repo as one big python project
 # you'd fill in the setup stuff here
 # gross
-import setuptools
+from setuptools import setup, find_packages
+from project import project_name
 
-setuptools.setup(
-    name="ESTCP project",
-    package_dir={'': 'data-interface'},
-    packages=['estcp_data']
+setup(
+    name=f"{project_name} project",
+    #packages=find_packages()
 )

@@ -9,12 +9,12 @@ repos:
     stages:
     - prepare-commit-msg
 
-  - entry: notebooking _git-hook
-    id: build-project-docs
-    files: notebooking\/book\/.*
-    language: system
-    name: build project documentation
-    stages: [commit]
+  # - entry: notebooking _git-hook
+  #   id: build-project-docs
+  #   files: notebooking\/book\/.*
+  #   language: system
+  #   name: build project documentation
+  #   stages: [commit]
 
   repo: local
 

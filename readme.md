@@ -43,7 +43,7 @@ The workflow is formalized by the tasks that are defined in the `project` comman
 The tasks (try to) align code, files, and execution environments.
 The tasks aid the following development process.
 
-0. Activate project environment: `> conda activate estcp-project`.
+0. Activate project environment: `> conda activate prefix-project`.
 
 1. Initialize work directories.
 
@@ -109,7 +109,7 @@ The tasks aid the following development process.
 1. **Configure**
 
     The only required configuration is setting the DVC repository in the project [configuration file](./project/config.yml).
-    This repo is on the shared drive at \\\pnl\projects\ArmyReserve\ESTCP\Machine Learning\software-files\dont-touch\not-code-dvc-repo, so check that you can access it.
+    This repo is on the shared drive at \\\pnl\slash\slash\slash, so check that you can access it.
     Optionally, make this folder available offline for better performance (Windows feature). <br>
 
     > Do not modify this directory (yourself)!
@@ -121,12 +121,12 @@ The tasks aid the following development process.
 
 2. **Check project tools**
 
-    After entering the project development environment, with `> conda activate estcp-project`, check that you can list development [tasks](project/estcp_project/tasks/tasks.py) with: `> project -l`.
+    After entering the project development environment, with `> conda activate prefix-project`, check that you can list development [tasks](project/project/tasks/tasks.py) with: `> project -l`.
     <br>
 Use `-h` before the task name to learn about the task like:
     
     ```
-    (estcp-project) > project -h project.info.work-dir-list
+    (prefix-project) > project -h project.info.work-dir-list
     Usage: inv[oke] [--core-opts] list-work-dirs [other tasks here ...]
     
     Docstring:

@@ -23,5 +23,5 @@ except RecursionError:
 
 #c.NotebookApp.notebook_dir = ''
 ## Full path of a config file.
-#from estcp_project import project_root
+#from project import project_root
 #c.JupyterApp.config_file = project_root / 'notebooking' / jupyter_config

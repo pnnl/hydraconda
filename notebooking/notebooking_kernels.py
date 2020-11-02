@@ -1,5 +1,4 @@
-from estcp_project.work import find_WorkDirs
-#from estcp_project import estcp_project*
+from project.work import find_WorkDirs
 from jupyter_client.kernelspec import KernelSpecManager as _KernelSpecManager
 from pathlib import Path
 

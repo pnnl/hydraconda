@@ -1,8 +1,11 @@
 #!/bin/bash
 set -e
-#REM 'estcp' is a variable. TODO
+
+PROJECT_NAME = $(python project_name.py)
+PROJECT_ENV = ${PROJECT_NAME}-project
+
 conda env update --name=base
 cd project
 conda devenv
-conda run -n estcp-project invoke project.setup $@
+conda run -n ${PROJECT_ENV} invoke project.setup $@
 cd ..

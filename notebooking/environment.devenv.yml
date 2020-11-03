@@ -32,6 +32,7 @@ environment:
   WORKDIR_PATH:  '{{root}}'                                       # [not is_included]
   PROJECTROOT:  '{{ os.path.abspath(os.path.join(root, '..')) }}' # [not is_included]
   PROJECT_ROOT: '{{ os.path.abspath(os.path.join(root, '..')) }}' # [not is_included]
+  PROJECT_NAME: '{{project_name}}'                                # [not is_included]
 includes:
 {% for included in included_workdirs %}
   - '{{root}}/../{{included}}/environment.devenv.yml'

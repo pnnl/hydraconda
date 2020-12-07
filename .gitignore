@@ -16,6 +16,9 @@
 !*.py
 !*.coco
 !*.r
+!*Dockerfile*
+!*.dockerfile
+
 # doc src
 !*.md
 # assuming (small) config type yamls

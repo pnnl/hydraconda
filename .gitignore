@@ -1,3 +1,8 @@
+# Note: This is restrictive but it might be possible
+# to compartmentalize some specific ignores in (subfolders/workdirs)
+# by using a .gitignore there
+
+
 # First, ignore everything
 *
 # Now, whitelist anything that's a directory

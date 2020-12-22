@@ -7,5 +7,5 @@ PROJECT_ENV=${PROJECT_NAME}-project
 conda env update --name=base
 cd project
 conda devenv
-conda run -n ${PROJECT_ENV} invoke project.setup $@
+conda run -n ${PROJECT_ENV} --live-stream invoke project.setup $@
 cd ..

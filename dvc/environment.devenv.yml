@@ -1,0 +1,37 @@
+{%set project_name=  os.path.basename(os.path.abspath(os.path.join(root, '..')))  %}
+# copy/paste into your work dir and fill out where appropriate.
+{% set keep_here =     not is_included %}  # https://github.com/ESSS/conda-devenv/issues/120
+{% set dev_req =       keep_here %}
+{% set wrapped_exe =   keep_here %}
+{% set run_req =       True %}  # just annotation
+
+#                almost need 'project' but 'notebooking' is optional
+{% set included_workdirs = [ 'project'] %}
+
+
+dependencies:
+  # data/non-source file mgt.
+  - dvc               # [wrapped_exe]
+
+environment:
+  # probably want to append to PATH and PYTHONPATH in your env
+  # see wrapped exec note in project/environment.devenv.yml
+  PATH:
+    - '{{root}}'
+  PYTHONPATH:
+    - '{{root}}'
+  #                              don't define the following in envs that include this
+  WORK_DIR: '{{  os.path.basename(root) }}'                       # [keep_here]
+  WORKDIR:  '{{  os.path.basename(root) }}'                       # [keep_here]
+  WORK_DIR_PATH: '{{root}}'                                       # [keep_here]
+  WORKDIR_PATH:  '{{root}}'                                       # [keep_here]
+  PROJECTROOT:  '{{ os.path.abspath(os.path.join(root, '..')) }}' # [keep_here]
+  PROJECT_ROOT: '{{ os.path.abspath(os.path.join(root, '..')) }}' # [keep_here]
+  PROJECT_NAME: '{{project_name}}'                                # [keep_here]
+
+includes:
+{% for included in included_workdirs %}
+  - '{{root}}/../{{included}}/environment.devenv.yml'
+{% endfor %}
+
+name: {{project_name}}-{{os.path.basename(root)}}

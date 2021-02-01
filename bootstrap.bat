@@ -8,6 +8,6 @@ conda env update --name=base &&^
 cd project &&^
 conda devenv &&^
 conda run -n %PROJECT_ENV% invoke work-dir.action.create-scripts-wrappers &&^
-copy wbin\project-run-in.bat wbin\_project-run-in.bat &&^
+copy /Y wbin\project-run-in.bat wbin\_project-run-in.bat &&^
 wbin\_project-run-in invoke work-on --work-dir=project --no-skip-project-workdir &&^
 cd ..

@@ -15,7 +15,12 @@ channels:
 {% if dev_req %}
 {{ included_workdirs.append('project') or "" }} # almost needed ("" is just a hack to not output None)
 {% endif %}
-
+{% if included_workdirs %}
+includes:
+{% for included in included_workdirs %}
+  - '{{root}}/../{{included}}/environment.devenv.yml'
+{% endfor %}
+{% endif %}
 
 dependencies:
   - invoke            # [keep_here]
@@ -64,9 +69,4 @@ environment:
   PROJECT_ROOT: '{{ os.path.abspath(os.path.join(root, '..')) }}' # [keep_here]
   PROJECT_NAME: '{{project_name}}'                                # [keep_here]
 
-{% if included_workdirs %}
-includes:
-{% for included in included_workdirs %}
-  - '{{root}}/../{{included}}/environment.devenv.yml'
-{% endfor %}
-{% endif %}
+

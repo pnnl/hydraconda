@@ -1,31 +1,60 @@
+# copy/paste into your workdir and change where appropriate.
 {%set project_name=  os.path.basename(os.path.abspath(os.path.join(root, '..')))  %}
-# don't install stuff from this env
+name: {{project_name}}-{{os.path.basename(root)}}
+
 {% set keep_here =     not is_included %}  # https://github.com/ESSS/conda-devenv/issues/120
 {% set dev_req =       keep_here %}
 {% set wrapped_exe =   keep_here %}
-{% set run_req =       True %}  # just annotation
+{% set run_req =       True %}  # serves as just annotation
 
-{% set included_workdirs = ['project', ] %}
+channels:
+  - conda-forge
+
+# 'internal' dependencies:
+{% set included_workdirs = [] %}
+{% if dev_req %}
+{{ included_workdirs.append('project') or "" }} # almost needed ("" is just a hack to not output None)
+{% endif %}
+
 
 dependencies:
-    - invoke            # [keep_here]
-    - python=3.8        # [keep_here]
-    - jupyter           # [wrapped_exe]
-    - jupytext          # [wrapped_exe]
-    #- nbpresent not installing creating conflicts # [not is_included]
-    - papermill         # [wrapped_exe]
-    #- fastai::nbdev     # [run_req] interesting but not great
-    - pip               # [not is_included]
-    - pip:
-        - jupyter-book  # [wrapped_exe]
-        - magicinvoke   # [dev_req]
+  - invoke            # [keep_here]
+  - python=3.8        # [keep_here]
+  - jupyter           # [wrapped_exe]
+  - jupytext          # [wrapped_exe]
+  #- nbpresent not installing creating conflicts # [not is_included]
+  - papermill         # [wrapped_exe]
+  #- fastai::nbdev     # [run_req] interesting but not great
+  - pip               # [not is_included]
+  - pip:
+      - jupyter-book  # [wrapped_exe] waiting for condaforge pkg https://github.com/executablebooks/jupyter-book/issues/1035 
+      - magicinvoke   # [dev_req]
+  # fill out your deps
+  {% if is_included %}
+  - ipykernel
+  # also can have irkernel
+  #- irkernel                  # [dev_req]
+  {% endif %}
+
+
 environment:
-  # probably want to append PATH and PYTHONPATH in your env
+  # probably want to append to PATH and PYTHONPATH in your env
+  # see wrapped exec note in project/environment.devenv.yml
   PATH:
     - '{{root}}'
+    # adds all wrapped executables to path.
+    # {% for maybe_dir in  os.scandir( os.path.abspath(os.path.join(root, '..')) )   %}
+    # {% if maybe_dir.is_dir()  and keep_here %}
+    # - {{ os.path.abspath(os.path.join(maybe_dir, "wbin")) }}
+    # {% endif %}
+    # {% endfor %}
+    # adds included workdirs
+    {% for workdir in included_workdirs %}
+    - {{ os.path.abspath(os.path.join(root, '..', workdir, "wbin")) }}
+    {% endfor %}
+  
   PYTHONPATH:
     - '{{root}}'
-  JUPYTER_CONFIG_DIR: '{{root}}'
   #                              don't define the following in envs that include this
   WORK_DIR: '{{  os.path.basename(root) }}'                       # [keep_here]
   WORKDIR:  '{{  os.path.basename(root) }}'                       # [keep_here]
@@ -34,8 +63,10 @@ environment:
   PROJECTROOT:  '{{ os.path.abspath(os.path.join(root, '..')) }}' # [keep_here]
   PROJECT_ROOT: '{{ os.path.abspath(os.path.join(root, '..')) }}' # [keep_here]
   PROJECT_NAME: '{{project_name}}'                                # [keep_here]
+
+{% if included_workdirs %}
 includes:
 {% for included in included_workdirs %}
   - '{{root}}/../{{included}}/environment.devenv.yml'
 {% endfor %}
-name: {{project_name}}-{{os.path.basename(root)}}
+{% endif %}

@@ -36,7 +36,7 @@ dependencies:
       - magicinvoke   # [dev_req]
   # fill out your deps
   {% if is_included %}
-  - ipykernel
+  - ipykernel         # [def_req]
   # also can have irkernel
   #- irkernel                  # [dev_req]
   {% endif %}

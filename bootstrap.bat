@@ -1,7 +1,7 @@
 @echo on
 
 
-call python project_name.py || goto :error
+call            python project_name.py || goto :error
 for /f %%i in ('python project_name.py') do set PROJECT_NAME=%%i
 set PROJECT_ENV=%PROJECT_NAME%-project
 

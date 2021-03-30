@@ -49,12 +49,13 @@ dependencies:
       - jupyter-book  # [wrapped_exe] waiting for condaforge pkg https://github.com/executablebooks/jupyter-book/issues/1035 
       - magicinvoke   # [dev_req]
   {% if is_included %}
-  - ipykernel         # [def_req]
+  - ipykernel         # [not keep_here]
   # also can have irkernel
-  #- irkernel                  # [dev_req]
+  #- irkernel         # [not keep_here]
   {% endif %}
 
 environment:
+  JUPYTER_CONFIG_DIR: {{root}}
   PATH:
     # adds included workdir wrapped execs
     {% for workdir_pth in included_workdir_pths %}

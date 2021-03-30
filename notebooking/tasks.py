@@ -7,8 +7,8 @@ work_dir_pth = Path(__file__).parent
 ns = Collection()
 
 #@task
-def _(ctx):
-    ctx.run(f"jupyter notebook")
+#def _(ctx, *a, **k):
+#    ctx.run(f"jupyter notebook")
 #ns.add_task(test)
 
 # not needed i think b/c kernels are installed on every jupyter cmd: jupter_config.py

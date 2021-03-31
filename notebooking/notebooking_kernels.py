@@ -1,4 +1,5 @@
 from project.work import find_WorkDirs
+from project import project_root
 from jupyter_client.kernelspec import KernelSpecManager as _KernelSpecManager
 from pathlib import Path
 
@@ -10,6 +11,11 @@ class KernelSpecManager(_KernelSpecManager):
 
 
     def find_kernel_specs(self):
+        from shutil import which
+        exe_ext = f"notebooking-run-in"
+        exe_ext = which(exe_ext)
+        exe_ext = Path(exe_ext).suffix
+
         from subprocess import check_output
         import json
         work_dirs = {wd for wd in find_WorkDirs() if wd.name != 'notebooking'}
@@ -21,7 +27,6 @@ class KernelSpecManager(_KernelSpecManager):
         env_dirs = {Path(ed).name: Path(ed) for ed in env_dirs
                     if Path(ed).name in work_dirs_by_env}
         r = {}
-        from shutil import which
         for env_name, env_dir in env_dirs.items():
             wd = work_dirs_by_env[env_name]
             kps  =          env_dir / 'share' / 'jupyter' / 'kernels'
@@ -34,8 +39,10 @@ class KernelSpecManager(_KernelSpecManager):
                         with open(kp / '_kernel.json',) as kf:
                             kernel = json.load(kf)
                         kernel_name = f"{wd.devenv_name}-{kp.stem}"
-                        exe_prefix = f"{wd.name}-run-in" #* either runin or pth to wrapper
-                        exe_prefix = str(which(exe_prefix))
+                        exe_prefix = f"{project_root / wd.name / 'wbin' / wd.name }-run-in"+exe_ext #* either runin or pth to wrapper
+                        # maybe it doesnt exist, so wouldnt want to error
+                        # exe_prefix = which(exe_prefix)
+                        # assert(exe_prefix)
                         kernel['argv'] = [exe_prefix] + kernel['argv']
                         kernel['display_name'] = kernel_name
                         with open(kp / 'kernel.json', 'w') as kf:
@@ -64,6 +71,8 @@ class KernelSpecManager(_KernelSpecManager):
         #for kp in (Path(sys.prefix) / 'share' / 'jupyter' / 'kernels').iterdir():
         #    kp.unlink()
         for k_name, k_dir in self.find_kernel_specs().items():
+            k_dir = Path(k_dir)
+            assert(k_dir.exists())
             self.install_kernel_spec(
                 str(k_dir),
                 prefix=sys.prefix, user=None,

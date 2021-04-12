@@ -21,7 +21,7 @@ class KernelSpecManager(_KernelSpecManager):
         work_dirs = {wd for wd in find_WorkDirs() if wd.name != 'notebooking'}
         work_dirs_by_name = {wd.name: wd for wd in work_dirs}
         work_dirs_by_env = {wd.devenv_name: wd for wd in work_dirs}
-        env_dirs = check_output(['conda', 'env', 'list', '--json'], shell=False)
+        env_dirs = check_output('conda env list --json', shell=True)
         env_dirs = json.loads(env_dirs)['envs']
         #           stem or name?                 stem or name?
         env_dirs = {Path(ed).name: Path(ed) for ed in env_dirs

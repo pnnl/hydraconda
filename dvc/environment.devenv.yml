@@ -28,7 +28,7 @@ name: {{project_name}}-{{os.path.basename(root)}}
 {% endif %}
 
 {% if run_req %}
-  {{append_workdir_name('azure', included_workdir_pths)}} 
+  ##append_workdir_name(aworkdir, included_workdir_pths)}} 
 {% endif %}
 
 

@@ -28,7 +28,7 @@ name: {{project_name}}-{{os.path.basename(root)}}
 {% endif %}
 
 {% if run_req %}
-  ## append_workdir_name(aworkdir, included_workdir_pths)}} 
+  ##append_workdir_name(aworkdir, included_workdir_pths)}} 
 {% endif %}
 
 
@@ -46,10 +46,25 @@ channels:
 dependencies:
   # data/non-source file mgt.
   - dvc               # [wrapped_exe]
+  # https://github.com/iterative/dvc/issues/5787#issuecomment-817819112
+  - dvc-azure         # [wrapped_exe]
+  #- pip                # [wrapped_exe]
+  #- pip:               # [wrapped_exe]
+   # - dvc[azure]      # [wrapped_exe]
   - invoke            # [keep_here]
 
 environment:
   PATH:
+    # adds all wrapped executables to path. 
+    {% set path_allworkdirs=True %}
+    {% if path_allworkdirs %}
+    {% for workdir_pth in all_workdir_pths  %}
+    {% if  keep_here and os.path.basename(root)!=os.path.basename(workdir_pth) %}
+    - {{ os.path.join(workdir_pth, "wbin") }}                     # [keep_here]
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
     # adds included workdir wrapped execs
     {% for workdir_pth in included_workdir_pths %}
     # ...but dont add self

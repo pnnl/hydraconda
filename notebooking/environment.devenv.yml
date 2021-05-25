@@ -43,11 +43,11 @@ dependencies:
   - jupytext          # [wrapped_exe]
   #- nbpresent not installing creating conflicts # [not is_included]
   - papermill         # [wrapped_exe]
-  #- fastai::nbdev     # [run_req] interesting but not great
+  #- fastai::nbdev    # [run_req] interesting but not great
+  - jupyter-book      # [wrapped_exe] 
   - pip               # [keep_here]
   - pip:
-      - jupyter-book  # [wrapped_exe] waiting for condaforge pkg https://github.com/executablebooks/jupyter-book/issues/1035 
-      - magicinvoke   # [dev_req]
+    - magicinvoke     # [dev_req]
   {% if is_included %}
   - ipykernel         # [not keep_here]
   # also can have irkernel
@@ -84,3 +84,4 @@ environment:
   PROJECT_NAME: '{{project_name}}'                                # [keep_here]
   # ...plus, cant merge this key in a env that includes it
   MODE: local-dev  # vs. prod                                     # [keep_here]
+

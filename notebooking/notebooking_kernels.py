@@ -3,6 +3,7 @@ from project import project_root
 from jupyter_client.kernelspec import KernelSpecManager as _KernelSpecManager
 from pathlib import Path
 
+
 class KernelSpecManager(_KernelSpecManager):
 
     def __init__(self, *args, **kwargs):
@@ -12,8 +13,9 @@ class KernelSpecManager(_KernelSpecManager):
 
     def find_kernel_specs(self):
         from shutil import which
-        exe_ext = f"notebooking-run-in"
+        exe_ext = "self-setup" # 'run-in'
         exe_ext = which(exe_ext)
+        assert(exe_ext)
         exe_ext = Path(exe_ext).suffix
 
         from subprocess import check_output
@@ -66,7 +68,8 @@ class KernelSpecManager(_KernelSpecManager):
     def install_kernel_specs(self):
         import sys
         import shutil
-        kernel_dirs = (Path(sys.prefix) / 'share' / 'jupyter' / 'kernels')
+        # space for kernels to be installed in 'notebooking'
+        kernel_dirs = (Path(sys.prefix) / 'share' / 'jupyter' / 'kernels') 
         if kernel_dirs.exists(): shutil.rmtree(kernel_dirs)
         #for kp in (Path(sys.prefix) / 'share' / 'jupyter' / 'kernels').iterdir():
         #    kp.unlink()
@@ -79,3 +82,4 @@ class KernelSpecManager(_KernelSpecManager):
                 kernel_name=k_name,
                 replace=True,
                 )
+

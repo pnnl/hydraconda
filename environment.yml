@@ -3,4 +3,6 @@ channels:
 dependencies:
   - conda-devenv
   - git # puts bash in windows
+  - pip # https://github.com/conda/conda/issues/10887
+  - conda
 name: base

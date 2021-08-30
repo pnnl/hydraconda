@@ -9,7 +9,6 @@ ARG BLD_WORKDIR='project'
 
 
 # 1. create startup scripts
-RUN conda update conda
 RUN conda init bash
 RUN cp ~/.bashrc ~/_.bashrc
 RUN cp ~/_.bashrc ~/project.bashrc

@@ -4,11 +4,20 @@ from jupyter_client.kernelspec import KernelSpecManager as _KernelSpecManager
 from pathlib import Path
 
 
+def check_ifnbenv():
+    import sys
+    # space for kernels to be installed in 'notebooking'
+    from project import activated_workdir
+    if 'notebooking' != activated_workdir.stem:
+        raise Exception("this only intended to be run within the 'notebooking' jupyter")
+
+check_ifnbenv()
+
 class KernelSpecManager(_KernelSpecManager):
 
     def __init__(self, *args, **kwargs):
-       super().__init__(*args, **kwargs)
-       self.install_kernel_specs()
+        super().__init__(*args, **kwargs)
+        self.install_kernel_specs()
 
 
     def find_kernel_specs(self):
@@ -69,7 +78,7 @@ class KernelSpecManager(_KernelSpecManager):
         import sys
         import shutil
         # space for kernels to be installed in 'notebooking'
-        kernel_dirs = (Path(sys.prefix) / 'share' / 'jupyter' / 'kernels') 
+        kernel_dirs = (Path(sys.prefix) / 'share' / 'jupyter' / 'kernels')
         if kernel_dirs.exists(): shutil.rmtree(kernel_dirs)
         #for kp in (Path(sys.prefix) / 'share' / 'jupyter' / 'kernels').iterdir():
         #    kp.unlink()

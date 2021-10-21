@@ -55,7 +55,7 @@ dependencies:
   {% endif %}
 
 environment:
-  JUPYTER_CONFIG_DIR: {{root}}
+  JUPYTER_CONFIG_DIR: {{root}}    # [keep_here]
   PATH:
     # adds included workdir wrapped execs
     {% for workdir_pth in included_workdir_pths %}

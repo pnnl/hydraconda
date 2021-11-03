@@ -14,4 +14,7 @@ from pathlib import Path
 #     print(name[1])
 
 pth  = Path(__file__).absolute().parent
-print(pth.name)
+
+
+if __name__ == '__main__':
+    print(pth.name)

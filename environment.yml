@@ -5,4 +5,6 @@ dependencies:
   - git # puts bash in windows
   - pip # https://github.com/conda/conda/issues/10887
   - conda
+  - mamba
+  - chardet ### hacky. don't like this. forget why is this here??
 name: base

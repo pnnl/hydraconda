@@ -21,8 +21,12 @@
 !*.py
 !*.coco
 !*.r
+
+# infra
 !*Dockerfile*
 !*.dockerfile
+
+
 
 # doc src
 !*.md
@@ -44,6 +48,7 @@ secret.*
 /envs
 # ignore generated dev env
 environment.yml
+_.devenv.yml
 # ignore (generated) snapshots b/c they're getting big
 **/snapshots
 # ignore generated executable scripts
@@ -51,3 +56,5 @@ environment.yml
 **/wbin
 # ignore checkpoint files
 **/.ipynb_checkpoints
+# cicd
+/builds

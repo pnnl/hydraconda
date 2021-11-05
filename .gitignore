@@ -47,6 +47,8 @@ secret.*
 # ignore environments
 /envs
 # ignore generated dev env
+# _ should be deleted
+_.yml 
 environment.yml
 _.devenv.yml
 # ignore (generated) snapshots b/c they're getting big

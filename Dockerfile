@@ -30,7 +30,8 @@ RUN ./bootstrap.sh
 # 3. set up
 RUN cp ~/project.bashrc ~/.bashrc
 # SHELL [ "/bin/bash", "--login", "-c"]
-RUN ./project/wbin/project work-on -work-dir ${BLD_WORKDIR}
+RUN ./project/wbin/project work-dir.setup.build --work-dir ${BLD_WORKDIR}
+
 
 # 4. set/fix intended work env
 RUN cp ~/${BLD_WORKDIR}.bashrc ~/.bashrc

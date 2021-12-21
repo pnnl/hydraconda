@@ -1,2 +1,1 @@
-inv -r ${WORKDIR_PATH} setup
 project work-dir.action.create-exec-wrapper -w ${WORKDIR} -e dvc

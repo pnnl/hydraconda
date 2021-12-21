@@ -1,0 +1,1 @@
+inv -r ${WORKDIR_PATH} ${*}

@@ -38,7 +38,6 @@ channels:
   - conda-forge
 dependencies:
   - invoke            # [keep_here]
-  - python=3.8        # [keep_here]
   - jupyter           # [wrapped_exe]
   - jupytext          # [wrapped_exe]
   #- nbpresent not installing creating conflicts # [not is_included]

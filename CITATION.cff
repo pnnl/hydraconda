@@ -1,0 +1,22 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Hydraconda
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Majid
+    family-names: alDosari
+    name-suffix: ''''
+    orcid: 'https://orcid.org/0000-0002-1236-2960'
+repository-code: 'https://github.com/pnnl/hydraconda'
+abstract: >-
+  A framework for developing scientific computing codes for
+  projects was developed that accommodates both explorations
+  as well as, simultaneously, software engineering rigor.
+  This is accomplished by organizing modular yet composable
+  and related computational environments. Also known as
+  Management of Multiple Computational Environments.

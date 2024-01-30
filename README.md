@@ -1,3 +1,5 @@
+potentially obsolete with [pixi multienvs](https://pixi.sh/design_proposals/multi_environment_proposal/#user-interface-environment-activation).
+
 # hydraconda pitch
 technical: [readme](./project/readme.md)  
 [presentation](https://github.com/majidaldo/hcp/blob/master/presentation/slides.md)
